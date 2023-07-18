@@ -1,11 +1,11 @@
 library 'f10-jenkins-library@1.0_patches'
+library 'fips-jenkins-library@main'
 
 pipeline {
     agent { label 'linux' }
 
-    environment {
-        PROJECT_NAME = 'faktorips-documentation'
-        BUILD_NAME = "${env.GERRIT_CHANGE_NUMBER}"
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '30'))
     }
 
     stages {
@@ -28,7 +28,9 @@ pipeline {
         }
     }
 
-    options {
-        buildDiscarder(logRotator(daysToKeepStr: '14'))
+    post {
+        regression {
+            failedEmail to: '$GERRIT_PATCHSET_UPLOADER_EMAIL'
+        }
     }
 }

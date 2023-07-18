@@ -1,16 +1,12 @@
+library 'fips-jenkins-library@main'
 library 'f10-jenkins-library@1.0_patches'
 
 pipeline {
     agent { label 'linux' }
 
-    environment {
-        PROJECT_NAME = 'faktorips.intellij'
-        BUILD_NAME = 'main'
-     }
-
     options {
         skipDefaultCheckout true
-        buildDiscarder(logRotator(daysToKeepStr: '14'))
+        buildDiscarder(logRotator(numToKeepStr: '15'))
     }
 
     stages {
@@ -46,11 +42,7 @@ pipeline {
 
     post {
         unsuccessful {
-            emailext to: env.TEAM_EMAIL, mimeType: 'text/html', subject: 'Jenkins Build Failure - $PROJECT_NAME', body: '''
-                <img src="https://jenkins.io/images/logos/fire/fire.png" style="max-width: 300px;" alt="Jenkins is not happy about it ...">
-                <br>
-                $BUILD_URL
-            '''
+            failedEmail to: 'fips@faktorzehn.de'
         }
     }
 }
