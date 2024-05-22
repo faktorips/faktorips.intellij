@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.intellij' version '1.15.0'
+    id 'org.jetbrains.intellij' version '1.17.3'
     id 'java'
 }
 
@@ -23,7 +23,7 @@ patchPluginXml {
       Alpha Version
       """
     sinceBuild = "222"
-    untilBuild = "233.*"
+    untilBuild = "241.*"
 }
 test {
     useJUnitPlatform()
