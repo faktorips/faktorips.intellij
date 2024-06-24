@@ -1,7 +1,7 @@
 <idea-plugin>
-    <id>org.faktorips.faktorips.intellij</id>
+    <id>org.faktorips.devtools</id>
     <name>Faktor-IPS Development Tools</name>
-    <vendor email="fips@faktorzehn.de" url="https://www.faktorzehn.org">Faktor Zehn Gmbh</vendor>
+    <vendor email="fips@faktorzehn.de" url="https://www.faktorzehn.org">Faktor Zehn GmbH</vendor>
 
     <description><![CDATA[
     <p>Using the product system Faktor-IPS for insurance and finance applications you design your business model, generate java code and define products very easy.</p>

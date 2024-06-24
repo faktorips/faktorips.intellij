@@ -15,7 +15,7 @@ pipeline {
                 }
 
                 withGradle {
-                    sh './gradlew clean build'
+                    sh './gradlew clean build verifyPlugin'
                 }
             }
         }
