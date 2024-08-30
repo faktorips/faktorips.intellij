@@ -23,7 +23,7 @@ patchPluginXml {
       Alpha Version
       """
     sinceBuild = "222"
-    untilBuild = "241.*"
+    untilBuild = "242.*"
 }
 test {
     useJUnitPlatform()
