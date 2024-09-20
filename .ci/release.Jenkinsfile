@@ -4,6 +4,10 @@ library 'f10-jenkins-library@1.0_patches'
 pipeline {
     agent { label 'linux' }
 
+    tools {
+        jdk 'AdoptiumJDK17'
+    }
+
     options {
         skipDefaultCheckout true
         buildDiscarder(logRotator(numToKeepStr: '15'))

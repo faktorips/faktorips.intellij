@@ -3,6 +3,10 @@ library 'fips-jenkins-library@main'
 pipeline {
     agent { label 'linux' }
 
+    tools {
+        jdk 'AdoptiumJDK17'
+    }
+
     options {
         buildDiscarder(logRotator(numToKeepStr: '14'))
     }
