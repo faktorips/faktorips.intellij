@@ -2,7 +2,7 @@ import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
 import org.jetbrains.intellij.platform.gradle.models.ProductRelease
 
 plugins {
-    id 'org.jetbrains.intellij.platform' version '2.0.1'
+    id 'org.jetbrains.intellij.platform' version '2.2.0'
     id 'java'
 }
 
@@ -31,7 +31,7 @@ dependencies {
 }
 
 intellijPlatform {
-    version = '24.7'
+    version = '25.1'
     buildSearchableOptions = false
     pluginVerification {
         ides {
@@ -39,6 +39,7 @@ intellijPlatform {
                 it.types = [IntelliJPlatformType.IntellijIdeaCommunity]
                 it.channels = [ProductRelease.Channel.RELEASE]
                 it.sinceBuild = '223'
+                it.untilBuild = project.providers.<String>provider { null }
             }
         }
     }
@@ -48,7 +49,7 @@ patchPluginXml {
       Alpha Version
       """
     sinceBuild = "223"
-    untilBuild = project.providers.provider { null }
+    untilBuild = project.providers.<String>provider { null }
 }
 test {
     useJUnitPlatform()
