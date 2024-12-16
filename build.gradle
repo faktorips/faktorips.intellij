@@ -33,6 +33,13 @@ dependencies {
 intellijPlatform {
     version = '25.1'
     buildSearchableOptions = false
+    pluginConfiguration {
+        ideaVersion {
+            changeNotes = "Alpha Version"
+            sinceBuild = "223"
+            untilBuild = project.providers.<String>provider { null }
+        }
+    }
     pluginVerification {
         ides {
             select {
@@ -43,25 +50,16 @@ intellijPlatform {
             }
         }
     }
-}
-patchPluginXml {
-    changeNotes = """
-      Alpha Version
-      """
-    sinceBuild = "223"
-    untilBuild = project.providers.<String>provider { null }
+    signing {
+        certificateChain = System.getenv('INTELLIJ_CERTIFICATE_CHAIN')!=null?new File(System.getenv('INTELLIJ_CERTIFICATE_CHAIN')).getText('UTF-8'):''
+        privateKey = System.getenv('INTELLIJ_PRIVATE_KEY')!=null?new File(System.getenv('INTELLIJ_PRIVATE_KEY')).getText('UTF-8'):''
+        password = System.getenv('INTELLIJ_PRIVATE_KEY_PASSWORD')?:''
+    }
+    publishing {
+        token = System.getenv('INTELLIJ_PUBLISH_TOKEN')?:''
+        channels = [System.getenv('INTELLIJ_CHANNEL')?:'Alpha']
+    }
 }
 test {
     useJUnitPlatform()
-}
-
-signPlugin {
-    certificateChain = System.getenv('INTELLIJ_CERTIFICATE_CHAIN')!=null?new File(System.getenv('INTELLIJ_CERTIFICATE_CHAIN')).getText('UTF-8'):''
-    privateKey = System.getenv('INTELLIJ_PRIVATE_KEY')!=null?new File(System.getenv('INTELLIJ_PRIVATE_KEY')).getText('UTF-8'):''
-    password = System.getenv('INTELLIJ_PRIVATE_KEY_PASSWORD')?:''
-}
-
-publishPlugin {
-    token = System.getenv('INTELLIJ_PUBLISH_TOKEN')?:''
-    channels = [System.getenv('INTELLIJ_CHANNEL')?:'Alpha']
 }
