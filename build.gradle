@@ -1,8 +1,5 @@
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-import org.jetbrains.intellij.platform.gradle.models.ProductRelease
-
 plugins {
-    id 'org.jetbrains.intellij.platform' version '2.2.0'
+    id 'org.jetbrains.intellij.platform' version '2.2.1'
     id 'java'
 }
 
@@ -18,9 +15,8 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        intellijIdeaCommunity("2022.3")
-
-        bundledPlugin("com.intellij.java")
+        intellijIdeaCommunity '2022.3'
+        bundledPlugin 'com.intellij.java'
 
         pluginVerifier()
         zipSigner()
@@ -33,25 +29,22 @@ dependencies {
 intellijPlatform {
     version = '25.1'
     buildSearchableOptions = false
+    instrumentCode = true
     pluginConfiguration {
         ideaVersion {
-            changeNotes = "Alpha Version"
-            sinceBuild = "223"
-            untilBuild = project.providers.<String>provider { null }
+            sinceBuild = '223'
+            untilBuild = provider { null } as Provider<? extends String>
         }
     }
     pluginVerification {
         ides {
-            select {
-                it.types = [IntelliJPlatformType.IntellijIdeaCommunity]
-                it.channels = [ProductRelease.Channel.RELEASE]
-                it.sinceBuild = '223'
-                it.untilBuild = project.providers.<String>provider { null }
-            }
+            recommended()
         }
     }
     patchPluginXml {
-        untilBuild.set(project.providers.<String>provider { null })
+        changeNotes = """
+        Alpha Version
+        """.stripIndent()
     }
     signing {
         certificateChain = System.getenv('INTELLIJ_CERTIFICATE_CHAIN')!=null?new File(System.getenv('INTELLIJ_CERTIFICATE_CHAIN')).getText('UTF-8'):''

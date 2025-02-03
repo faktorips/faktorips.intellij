@@ -24,7 +24,7 @@ pipeline {
         stage('Build') {
             steps {
                 withGradle {
-                    sh './gradlew clean build verifyPlugin'
+                    sh './gradlew clean build verifyPlugin printProductsReleases'
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline {
             }
             steps {
                 withGradle {
-                    uploadRelease commands: ['./gradlew signPlugin publishPlugin']
+                    uploadRelease commands: ['./gradlew signPlugin publishPlugin printProductsReleases']
                 }
             }
         }
