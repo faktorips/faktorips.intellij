@@ -4,6 +4,7 @@ plugins {
 }
 
 group 'org.faktorips'
+// version is in gradle.properties file, for easy automated access
 
 repositories {
     mavenCentral()
@@ -27,7 +28,6 @@ dependencies {
 }
 
 intellijPlatform {
-    version = '25.1'
     buildSearchableOptions = false
     instrumentCode = true
     pluginConfiguration {
