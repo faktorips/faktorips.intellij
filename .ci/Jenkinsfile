@@ -1,4 +1,4 @@
-library 'fips-jenkins-library@main'
+library 'f10-jenkins-library@1.1_patches'
 
 pipeline {
     agent { label 'linux' }
@@ -8,12 +8,16 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Pre-Build') {
             steps {
                 script {
                     currentBuild.displayName = "#${env.BUILD_NUMBER}.${env.GIT_BRANCH}"
                 }
+            }
+        }
 
+        stage('Build and Test') {
+            steps {
                 withGradle {
                     sh './gradlew clean build printProductsReleases'
                 }
@@ -23,7 +27,7 @@ pipeline {
 
     post {
         unsuccessful {
-            failedEmail to: 'fips@faktorzehn.de'
+            sendFailureEmail()
         }
     }
 }

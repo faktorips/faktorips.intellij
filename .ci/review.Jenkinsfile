@@ -1,5 +1,4 @@
 library 'f10-jenkins-library@1.1_patches'
-library 'fips-jenkins-library@main'
 
 pipeline {
     agent { label 'linux' }
@@ -12,10 +11,8 @@ pipeline {
         stage('Pre-Build') {
             steps {
                 script {
-                    currentBuild.displayName = "#${env.BUILD_NUMBER}.${env.BUILD_NAME}"
+                    currentBuild.displayName = "#${env.BUILD_NUMBER}.${env.GERRIT_CHANGE_NUMBER}"
                 }
-
-                preBuildSteps()
             }
         }
 
@@ -25,13 +22,6 @@ pipeline {
                     sh './gradlew clean build printProductsReleases'
                 }
             }
-        }
-    }
-
-    post {
-        // TODO kann hier sendFailureEmail() verwendet werden?
-        regression {
-            failedEmail to: '$GERRIT_PATCHSET_UPLOADER_EMAIL'
         }
     }
 }

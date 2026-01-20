@@ -1,4 +1,3 @@
-library 'fips-jenkins-library@main'
 library 'f10-jenkins-library@1.1_patches'
 library 'release-library@1.2'
 
@@ -24,7 +23,9 @@ pipeline {
                     prepareRelease.custom({
                         setGradleVersion(params.RELEASE_VERSION)
                     }, {
-                        setGradleVersion("${params.DEVELOPMENT_VERSION}-SNAPSHOT")
+                        if (params.DEVELOPMENT_VERSION) {
+                            setGradleVersion(params.DEVELOPMENT_VERSION.endsWith('-SNAPSHOT') ? params.DEVELOPMENT_VERSION : "${params.DEVELOPMENT_VERSION}-SNAPSHOT")
+                        }
                     })
                 }
             }
@@ -36,7 +37,7 @@ pipeline {
                 }
             }
         }
-        stage('Release') {
+        stage('Upload Release') {
             environment {
                 INTELLIJ_CERTIFICATE_CHAIN = credentials('INTELLIJ_CERTIFICATE_CHAIN')
                 INTELLIJ_PRIVATE_KEY = credentials('INTELLIJ_PRIVATE_KEY')
@@ -56,8 +57,7 @@ pipeline {
 
     post {
         unsuccessful {
-            // TODO kann hier sendFailureEmail() verwendet werden?
-            failedEmail to: 'fips@faktorzehn.de'
+            sendFailureEmail()
         }
     }
 }
