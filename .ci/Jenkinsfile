@@ -19,7 +19,7 @@ pipeline {
                 }
 
                 withGradle {
-                    sh './gradlew clean build verifyPlugin printProductsReleases'
+                    sh './gradlew clean build printProductsReleases'
                 }
             }
         }

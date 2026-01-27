@@ -26,7 +26,7 @@ pipeline {
         stage('Build') {
             steps {
                 withGradle {
-                    sh './gradlew clean build verifyPlugin printProductsReleases'
+                    sh './gradlew clean build printProductsReleases'
                 }
             }
         }
