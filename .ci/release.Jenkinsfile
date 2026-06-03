@@ -1,5 +1,5 @@
 library 'fips-jenkins-library@main'
-library 'f10-jenkins-library@1.0_patches'
+library 'f10-jenkins-library@1.1_patches'
 
 pipeline {
     agent { label 'linux' }
@@ -46,6 +46,7 @@ pipeline {
 
     post {
         unsuccessful {
+            // TODO kann hier sendFailureEmail() verwendet werden?
             failedEmail to: 'fips@faktorzehn.de'
         }
     }

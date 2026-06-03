@@ -1,4 +1,4 @@
-library 'f10-jenkins-library@1.0_patches'
+library 'f10-jenkins-library@1.1_patches'
 library 'fips-jenkins-library@main'
 
 pipeline {
@@ -33,6 +33,7 @@ pipeline {
     }
 
     post {
+        // TODO kann hier sendFailureEmail() verwendet werden?
         regression {
             failedEmail to: '$GERRIT_PATCHSET_UPLOADER_EMAIL'
         }
