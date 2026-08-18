@@ -8,10 +8,6 @@ pipeline {
         jdk 'AdoptiumJDK17'
     }
 
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '30'))
-    }
-
     stages {
         stage('Pre-Build') {
             steps {
