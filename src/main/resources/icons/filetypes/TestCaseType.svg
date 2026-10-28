@@ -1,74 +1,249 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
-   width="16px"
-   height="16px"
+   id="Ebene_1"
+   data-name="Ebene 1"
+   width="16"
+   height="16"
    viewBox="0 0 16 16"
    version="1.1"
-   id="SVGRoot"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="TestCaseType.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <defs
-     id="defs2126" />
+   xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="base"
+     id="namedview7045"
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
+     inkscape:showpageshadow="2"
      inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="90.509672"
-     inkscape:cx="7.4964364"
-     inkscape:cy="8.2311645"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:window-width="2508"
-     inkscape:window-height="1403"
-     inkscape:window-x="1972"
-     inkscape:window-y="0"
+     inkscape:zoom="64.1875"
+     inkscape:cx="7.8987342"
+     inkscape:cy="8"
+     inkscape:window-width="2510"
+     inkscape:window-height="1371"
+     inkscape:window-x="1970"
+     inkscape:window-y="32"
      inkscape:window-maximized="1"
-     inkscape:grid-bbox="true"
-     inkscape:pagecheckerboard="0" />
-  <metadata
-     id="metadata2129">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+     inkscape:current-layer="Ebene_1" />
+  <defs
+     id="defs7018">
+    <style
+       id="style7016">
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #9cb108;
+      }
+
+      .cls-3 {
+        fill: #b8c445;
+      }
+    </style>
+    <radialGradient
+       id="Unbenannter_Verlauf_174"
+       data-name="Unbenannter Verlauf 174"
+       cx="73.599998"
+       cy="22.27"
+       fx="73.599998"
+       fy="22.27"
+       r="4.6300001"
+       gradientTransform="matrix(1.25,0,0,1.88,-76.19,-19.5)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#7cccf0"
+         id="stop428" />
+      <stop
+         offset=".15"
+         stop-color="#76caef"
+         id="stop430" />
+      <stop
+         offset=".34"
+         stop-color="#67c4ed"
+         id="stop432" />
+      <stop
+         offset=".55"
+         stop-color="#4dbaea"
+         id="stop434" />
+      <stop
+         offset=".78"
+         stop-color="#2aade6"
+         id="stop436" />
+      <stop
+         offset="1"
+         stop-color="#009ee2"
+         id="stop438" />
+    </radialGradient>
+    <radialGradient
+       id="Unbenannter_Verlauf_174-2"
+       data-name="Unbenannter Verlauf 174"
+       cy="17.49"
+       fy="17.49"
+       gradientTransform="matrix(1.25,0,0,1.88,-76.19,-15.31)"
+       xlink:href="#Unbenannter_Verlauf_174" />
+    <radialGradient
+       id="radialGradient7191"
+       data-name="Unbenannter Verlauf 174"
+       cx="73.599998"
+       cy="22.27"
+       fx="73.599998"
+       fy="22.27"
+       r="4.6300001"
+       gradientTransform="matrix(1.25,0,0,1.88,-76.19,-19.5)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#7cccf0"
+         id="stop7179" />
+      <stop
+         offset=".15"
+         stop-color="#76caef"
+         id="stop7181" />
+      <stop
+         offset=".34"
+         stop-color="#67c4ed"
+         id="stop7183" />
+      <stop
+         offset=".55"
+         stop-color="#4dbaea"
+         id="stop7185" />
+      <stop
+         offset=".78"
+         stop-color="#2aade6"
+         id="stop7187" />
+      <stop
+         offset="1"
+         stop-color="#009ee2"
+         id="stop7189" />
+    </radialGradient>
+    <radialGradient
+       id="Unbenannter_Verlauf_174-3"
+       data-name="Unbenannter Verlauf 174"
+       cx="170.95"
+       cy="12.7"
+       fx="170.95"
+       fy="12.7"
+       r="4.6300001"
+       gradientTransform="matrix(0.67,0,0,1,-94.31,0)"
+       xlink:href="#Unbenannter_Verlauf_174" />
+    <radialGradient
+       id="radialGradient7206"
+       data-name="Unbenannter Verlauf 174"
+       cx="73.599998"
+       cy="22.27"
+       fx="73.599998"
+       fy="22.27"
+       r="4.6300001"
+       gradientTransform="matrix(1.25,0,0,1.88,-76.19,-19.5)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#7cccf0"
+         id="stop7194" />
+      <stop
+         offset=".15"
+         stop-color="#76caef"
+         id="stop7196" />
+      <stop
+         offset=".34"
+         stop-color="#67c4ed"
+         id="stop7198" />
+      <stop
+         offset=".55"
+         stop-color="#4dbaea"
+         id="stop7200" />
+      <stop
+         offset=".78"
+         stop-color="#2aade6"
+         id="stop7202" />
+      <stop
+         offset="1"
+         stop-color="#009ee2"
+         id="stop7204" />
+    </radialGradient>
+  </defs>
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
+     id="g7026">
     <rect
-       style="opacity:1;fill:#6e4ad9;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-opacity:1"
-       id="rect1366"
-       width="12"
-       height="12"
-       x="2"
-       y="2"
-       ry="1" />
-    <g
-       aria-label="T"
-       id="text87673"
-       style="font-size:9.33333px;line-height:1.25;fill:#f2f2f2">
-      <path
-         d="M 7.2440004,5.9653339 H 5.1533344 V 4.7333344 H 10.846666 V 5.9653339 H 8.7559999 V 11.266665 H 7.2440004 Z"
-         style="font-weight:bold;font-family:Montserrat;-inkscape-font-specification:'Montserrat Bold'"
-         id="path825" />
-    </g>
+       class="cls-3"
+       x="2.19"
+       y="1"
+       width="11.63"
+       height="15"
+       id="rect7020"
+       style="fill:#009fe3;fill-opacity:1" />
+    <rect
+       class="cls-2"
+       x="2.19"
+       y="1"
+       width="5.81"
+       height="15"
+       id="rect7022"
+       style="fill:#0080bf;fill-opacity:1" />
+    <path
+       class="cls-1"
+       d="M7.46,3.87h-1.29v3.37h-.81v-3.37h-1.29v-.73h3.4v.73Z"
+       id="path7024" />
   </g>
+  <g
+     id="g7038">
+    <rect
+       class="cls-1"
+       x="5.62"
+       y="8.48"
+       width="6.19"
+       height=".56"
+       id="rect7028" />
+    <rect
+       class="cls-1"
+       x="5.62"
+       y="10.73"
+       width="6.19"
+       height=".56"
+       id="rect7030" />
+    <rect
+       class="cls-1"
+       x="8.57"
+       y="6.08"
+       width="3.3"
+       height=".56"
+       id="rect7032" />
+    <rect
+       class="cls-1"
+       x="4.13"
+       y="10.73"
+       width=".73"
+       height=".56"
+       id="rect7034" />
+    <rect
+       class="cls-1"
+       x="4.13"
+       y="8.48"
+       width=".73"
+       height=".56"
+       id="rect7036" />
+  </g>
+  <rect
+     class="cls-1"
+     x="5.62"
+     y="13.04"
+     width="6.19"
+     height=".56"
+     id="rect7040" />
+  <rect
+     class="cls-1"
+     x="4.13"
+     y="13.04"
+     width=".73"
+     height=".56"
+     id="rect7042" />
 </svg>

@@ -1,10 +1,17 @@
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+
 plugins {
-    id 'org.jetbrains.intellij.platform' version '2.3.0'
+    id 'org.jetbrains.intellij.platform' version '2.19.0'
     id 'java'
 }
 
 group 'org.faktorips'
 // version is in gradle.properties file, for easy automated access
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 
 repositories {
     mavenCentral()
@@ -21,10 +28,9 @@ dependencies {
 
         pluginVerifier()
         zipSigner()
-        instrumentationTools()
     }
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.11.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.14.4'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.14.4'
 }
 
 intellijPlatform {
@@ -56,6 +62,16 @@ intellijPlatform {
         channels = [System.getenv('INTELLIJ_CHANNEL')?:'Alpha']
     }
 }
+// runIde needs at least IDE 2023.3, so the sandbox for manual testing uses a newer IDE than the 2022.3 build target
+intellijPlatformTesting {
+    runIde {
+        register('runIdeRecent') {
+            type = IntelliJPlatformType.IntellijIdeaCommunity
+            version = '2024.3'
+        }
+    }
+}
+
 test {
     useJUnitPlatform()
 }

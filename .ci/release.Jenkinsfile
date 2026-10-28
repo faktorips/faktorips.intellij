@@ -5,7 +5,7 @@ pipeline {
     agent { label 'linux' }
 
     tools {
-        jdk 'AdoptiumJDK17'
+        jdk 'JDK21'
     }
 
     options {
