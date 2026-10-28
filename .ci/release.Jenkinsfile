@@ -1,5 +1,10 @@
 library 'fips-jenkins-library@main'
 library 'f10-jenkins-library@1.1_patches'
+library 'release-library@1.2'
+
+def setGradleVersion(String version) {
+    sh "sed -i 's/^version=.*/version=${version}/' gradle.properties"
+}
 
 pipeline {
     agent { label 'linux' }
@@ -15,8 +20,12 @@ pipeline {
     stages {
         stage('Prepare Release') {
             steps {
-                withGradle {
-                    prepareGradleRelease()
+                script {
+                    prepareRelease.custom({
+                        setGradleVersion(params.RELEASE_VERSION)
+                    }, {
+                        setGradleVersion("${params.DEVELOPMENT_VERSION}-SNAPSHOT")
+                    })
                 }
             }
         }
@@ -36,8 +45,10 @@ pipeline {
                 INTELLIJ_CHANNEL = "${params.CHANNEL?:'Alpha'}"
             }
             steps {
-                withGradle {
-                    uploadRelease commands: ['./gradlew signPlugin publishPlugin printProductsReleases']
+                uploadRelease {
+                    withGradle {
+                        sh './gradlew signPlugin publishPlugin printProductsReleases'
+                    }
                 }
             }
         }
