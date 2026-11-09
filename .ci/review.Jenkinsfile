@@ -24,4 +24,14 @@ pipeline {
             }
         }
     }
+
+    post {
+        // TODO kann hier sendFailureEmail() verwendet werden?
+        regression {
+            failedEmail to: '$GERRIT_PATCHSET_UPLOADER_EMAIL'
+        }
+        cleanup {
+            sh '.ci/cleanup-gradle.sh'
+        }
+    }
 }

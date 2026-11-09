@@ -59,5 +59,8 @@ pipeline {
         unsuccessful {
             sendFailureEmail()
         }
+        cleanup {
+            sh '.ci/cleanup-gradle.sh'
+        }
     }
 }
